@@ -5,7 +5,8 @@
   "scripts": {
     "dev": "vite",
     "build": "vue-tsc --noEmit && vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "eslint": "npx eslint \"./src/**/*.{ts,js,vue}\""
   },
   "dependencies": {
     "vue": "^3.2.25"
