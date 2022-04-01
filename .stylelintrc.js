@@ -14,6 +14,9 @@ module.exports = {
   rules: {
     'plugin/no-low-performance-animation-properties': true,
     'plugin/declaration-block-no-ignored-properties': true,
-    'plugin/no-unsupported-browser-features': [true, { severity: 'warning' }],
+    'plugin/no-unsupported-browser-features': [
+      true,
+      { browsers: ['> 1%', 'Last 2 versions'], severity: 'warning' },
+    ],
   },
 };
