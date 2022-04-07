@@ -2,21 +2,17 @@ import vue from '@vitejs/plugin-vue';
 import { defineConfig } from 'vite';
 import eslintPlugin from 'vite-plugin-eslint';
 import StylelintPlugin from 'vite-plugin-stylelint';
-// eslint-disable-next-line
-const { path, resolve } = require('path');
-
-const root = resolve(__dirname, 'src');
-const outDir = resolve(__dirname, 'dist');
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  root,
+  root: './src',
   plugins: [vue(), eslintPlugin(), StylelintPlugin()],
   build: {
-    outDir,
+    outDir: '../dist',
     rollupOptions: {
       input: {
-        login: resolve(root, 'login/index.html'),
+        main: '/index.html',
+        login: '/login/index.html',
       },
     },
   },
