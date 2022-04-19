@@ -10,9 +10,11 @@
     "lint:style": "stylelint \"src/**/*.{vue,css,scss}\""
   },
   "dependencies": {
+    "lodash": "^4.17.21",
     "vue": "^3.2.25"
   },
   "devDependencies": {
+    "@types/lodash": "^4.14.181",
     "@typescript-eslint/eslint-plugin": "^5.17.0",
     "@typescript-eslint/parser": "^5.17.0",
     "@vitejs/plugin-vue": "^2.2.0",

@@ -3,11 +3,11 @@
 // local functions and variables
 // local components
 
+import HTTPClient from '@/utils/client/httpClient';
+
 function login() {
-  window
-    .fetch('/proxy/api/simple/login', {
-      method: 'POST',
-    })
+  new HTTPClient('/proxy/api')
+    ._postJson('/simple/login')
     .then(() => {
       document.location.href = '/';
     })
