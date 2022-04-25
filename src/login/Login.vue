@@ -9,7 +9,7 @@ function login() {
   new HTTPClient('/proxy/api')
     ._postJson('/simple/login')
     .then(() => {
-      document.location.href = '/';
+      window.location.replace('/');
     })
     .catch(err => {
       console.error(err);
@@ -19,6 +19,6 @@ function login() {
 
 <template>
   <div>
-    <button @click="login">登录</button>
+    <button class="login-btn" @click="login">登录</button>
   </div>
 </template>

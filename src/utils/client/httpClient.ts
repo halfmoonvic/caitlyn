@@ -1,7 +1,11 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-
 import merge from 'lodash/merge';
 import HttpError from './HttpError';
+
+// https://github.com/node-fetch/node-fetch/issues/481
+const BASE_ADDR = import.meta.env.VITE_TEST_HOST
+  ? import.meta.env.VITE_TEST_HOST
+  : '';
 
 const DEFAULT_FETCH_OPTS = {
   method: 'GET',
@@ -46,7 +50,7 @@ export default class HTTPClient {
   private readonly fetchOpts: RequestInit;
 
   constructor(baseAddr: string, fetchOpts?: RequestInit) {
-    this.baseAddr = baseAddr;
+    this.baseAddr = BASE_ADDR + baseAddr;
     this.fetchOpts = { ...DEFAULT_FETCH_OPTS, ...fetchOpts };
   }
 

@@ -1,3 +1,5 @@
+/// <reference types="vitest" />
+
 import vue from '@vitejs/plugin-vue';
 import { defineConfig } from 'vite';
 import eslintPlugin from 'vite-plugin-eslint';
@@ -17,6 +19,9 @@ export default defineConfig({
     alias: {
       '@': root,
     },
+  },
+  test: {
+    environment: 'happy-dom', // 或 'jsdom', 'happy-dom'
   },
   build: {
     outDir,
