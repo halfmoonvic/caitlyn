@@ -6,14 +6,16 @@
 import HTTPClient from '@/utils/client/httpClient';
 
 function login() {
-  new HTTPClient('/proxy/api')
-    ._postJson('/simple/login')
-    .then(() => {
-      document.location.href = '/';
-    })
-    .catch(err => {
-      console.error(err);
-    });
+  document.location.href = '/';
+
+  // new HTTPClient('/proxy/api')
+  //   ._postJson('/simple/login')
+  //   .then(() => {
+  //     document.location.href = '/';
+  //   })
+  //   .catch(err => {
+  //     console.error(err);
+  //   });
 }
 </script>
 
